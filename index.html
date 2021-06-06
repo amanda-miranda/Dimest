@@ -20,299 +20,158 @@
 </head>
 
 <body class="background">
-	<h1 class="center-align color-white">Dimensionador Estrutural</h1>
-	<h6 class="center-align color-white">Informe os dados necessários para calcular a estrutura.</h6>
+	<main>
 
-	<div class="row no-bottom">
-		<div class="col s2"></div>
-		<div class="col s8">
-			<div class="card">
-				<div class="card-tabs">
-					<ul class="tabs tabs-fixed-width">
-						<li class="tab"><a class="active" href="#load_tab">Carga e Dimensionamento</a></li>
-						<li class="tab"><a href="#wires_tab">Propriedades do Arames</a></li>
-					</ul>
-				</div>
-
-				<div class="card-content set-card-action">
-					<div id="load_tab">
-						<b>Cargas Aplicadas</b>
-						<br />
-
-						<div class="row">
-							<form id="load-form" class="col s12">
-								<div class="row">
-									<div class="input-field input-group col s6">
-										<input id="p-force" type="number" class="validate">
-										<span id="p-force-message" class="helper-text" data-error="Inválido"
-											data-success="Válido"></span>
-										<label for="p-force">Força P:</label>
-										<b class="suffix">KN</b>
-									</div>
-									<div class="input-field input-group col s6">
-										<input id="w-load" type="number" class="validate">
-										<span id="w-load-message" class="helper-text" data-error="Inválido"
-											data-success="Válido"></span>
-										<label for="w-load">Carga Distribuída W:</label>
-										<b class="suffix">KN/m</b>
-									</div>
-								</div>
-							</form>
-						</div>
-
-						<b>Dimensões da Barra</b>
-						<br />
-
-						<div class="row">
-							<form class="col s12">
-								<div id="dimensioning-form" class="row">
-									<div class="input-field input-group col s4">
-										<input id="l3-length" type="number" class="validate">
-										<span id="l3-length-message" class="helper-text" data-error="Inválido"
-											data-success="Válido"></span>
-										<label for="l3-length">Comprimento L3:</label>
-										<span class="suffix">m</span>
-									</div>
-									<div class="input-field input-group col s4">
-										<input id="l4_length" type="number" class="validate">
-										<label for="l4_length">Comprimento L4:</label>
-										<span class="suffix">m</span>
-									</div>
-									<div class="input-field input-group col s4">
-										<input id="l5_length" type="number" class="validate">
-										<label for="l5_length">Comprimento L5:</label>
-										<span class="suffix">m</span>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-
-					<div id="wires_tab">
-						<i id="wire-choose-1" class="material-icons right pointer">content_paste</i>
-						<b>Primeiro Arame</b>
-						<br />
-
-						<div class="row">
-							<form class="col s12 set-image">
-								<div id="properties-wire1-form" class="row">
-									<div class="input-field input-group col s6">
-										<input id="elasticity-e1" type="number" class="validate">
-										<label for="elasticity-e1">Módulo de Elasticidade E1:</label>
-										<span class="suffix">GPa</span>
-									</div>
-									<div class="input-field input-group col s6">
-										<input id="leakage1" type="number" class="validate">
-										<label for="leakage1">Limite de Escoamento σ:</label>
-										<span class="suffix">MPa</span>
-									</div>
-								</div>
-							</form>
-						</div>
-
-						<div class="row">
-							<form class="col s12">
-								<div id="size-wire1-form" class="row">
-									<div class="input-field input-group col s6">
-										<input id="section_a1" type="number" class="validate">
-										<label for="section_a1">Área da Seção Transversal A1:</label>
-										<span class="suffix">mm²</span>
-									</div>
-									<div class="input-field input-group col s6">
-										<input id="length_l1" type="number" class="validate">
-										<label for="length_l1">Comprimento L1:</label>
-										<span class="suffix">m</span>
-									</div>
-								</div>
-							</form>
-						</div>
-
-						<i id="wire-choose-2" class="material-icons right pointer">content_paste</i>
-						<b>Segundo Arame</b>
-						<br />
-
-						<div class="row">
-							<form class="col s12">
-								<div id="properties-wire2-form" class="row">
-									<div class="input-field input-group col s6">
-										<input id="elasticity-e2" type="number" class="validate">
-										<label for="elasticity-e2">Módulo de Elasticidade E2:</label>
-										<span class="suffix">GPa</span>
-									</div>
-									<div class="input-field input-group col s6">
-										<input id="leakage2" type="number" class="validate">
-										<label for="leakage2">Limite de Escoamento σ:</label>
-										<span class="suffix">MPa</span>
-									</div>
-								</div>
-							</form>
-						</div>
-						<div class="row">
-							<form class="col s12">
-								<div id="size-wire1-form" class="row no-bottom">
-									<div class="input-field input-group col s6">
-										<input id="section_a2" type="number" class="validate">
-										<label for="section_a2">Área da Seção Transversal A2:</label>
-										<span class="suffix">mm²</span>
-									</div>
-									<div class="input-field input-group col s6">
-										<input id="length_l2" type="number" class="validate">
-										<label for="length_l2">Comprimento L2:</label>
-										<span class="suffix">m</span>
-									</div>
-								</div>
-							</form>
-						</div>
-
-					</div>
-				</div>
-
-				<div class="card-action right-align set-card-action">
-					<button id="calculator" class="btn waves-effect waves-light" type="button" name="action">
-						Calcule
-						<i class="material-icons right">send</i>
-					</button>
-				</div>
-			</div>
-		</div>
-		<div class="col s2"></div>
-	</div>
-
-
-	<div class="fixed-action-btn">
-		<img id="estrutura" class="btn-floating btn-large float-image" src="images/estrutura.png" />
-	</div>
-
-	<div id="modal-estrutura" class="modal">
-		<div class="modal-content background-white">
-			<img class="materialboxed fit-center" width="800" src="images/estrutura.png">
-		</div>
-	</div>
-
-	<div id="modal-materials" class="modal">
-		<div class="modal-content">
-			<h4>Selecione o Material Desejado</h4>
-			<hr>
-			<table class="highlight">
-				<thead>
-					<tr>
-						<th>Material</th>
-						<th>Módulo de Elasticidade</th>
-						<th>Tensão de Escoamento</th>
-					</tr>
-				</thead>
-
-				<tbody id="materials-table">
-					<tr>
-						<td>Aço Estrutural A36</td>
-						<td>200</td>
-						<td>250</td>
-					</tr>
-					<tr>
-						<td>Aço Inoxidável 304</td>
-						<td>193</td>
-						<td>207</td>
-					</tr>
-					<tr>
-						<td>Aço Ferramentas L2</td>
-						<td>200</td>
-						<td>703</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-
-	<br><br><br>
-
-	<div id="results" class="container" hidden>
+		<h1 class="center-align color-white">Dimensionador Estrutural</h1>
+		<h6 class="center-align color-white">Informe os dados necessários para calcular a estrutura.</h6>
+	
 		<div class="row no-bottom">
 			<div class="col s2"></div>
 			<div class="col s8">
 				<div class="card">
-					<div class="card-content">
-						<span class="card-title">Resultados do Cálculo Estrutural</span>
-
-						<b>Forças de Reação</b>
-						<br />
-
-						<div class="row center-align">
-							<form class="col s12">
-								<div class="row">
-									<div class="col s4">
-										<b>Va:</b>
-										<span>1,14</span>
-										<span>MN</span>
+					<div class="card-tabs">
+						<ul class="tabs tabs-fixed-width">
+							<li class="tab"><a class="active" href="#load_tab">Carga e Dimensionamento</a></li>
+							<li class="tab"><a href="#wires_tab">Propriedades do Arames</a></li>
+						</ul>
+					</div>
+	
+					<div class="card-content set-card-action">
+						<div id="load_tab">
+							<b>Cargas Aplicadas</b>
+							<br />
+	
+							<div class="row">
+								<form id="load-form" class="col s12">
+									<div class="row">
+										<div class="input-field input-group col s6">
+											<input id="p-force" type="number" class="validate">
+											<span id="p-force-message" class="helper-text" data-error="Inválido"
+												data-success="Válido"></span>
+											<label for="p-force">Força P:</label>
+											<b class="suffix">KN</b>
+										</div>
+										<div class="input-field input-group col s6">
+											<input id="w-load" type="number" class="validate">
+											<span id="w-load-message" class="helper-text" data-error="Inválido"
+												data-success="Válido"></span>
+											<label for="w-load">Carga Distribuída W:</label>
+											<b class="suffix">KN/m</b>
+										</div>
 									</div>
-									<div class="col s4">
-										<b>Vb:</b>
-										<span>1,14</span>
-										<span>KN</span>
+								</form>
+							</div>
+	
+							<b>Dimensões da Barra</b>
+							<br />
+	
+							<div class="row">
+								<form class="col s12">
+									<div id="dimensioning-form" class="row">
+										<div class="input-field input-group col s4">
+											<input id="l3-length" type="number" class="validate">
+											<span id="l3-length-message" class="helper-text" data-error="Inválido"
+												data-success="Válido"></span>
+											<label for="l3-length">Comprimento L3:</label>
+											<span class="suffix">m</span>
+										</div>
+										<div class="input-field input-group col s4">
+											<input id="l4_length" type="number" class="validate">
+											<label for="l4_length">Comprimento L4:</label>
+											<span class="suffix">m</span>
+										</div>
+										<div class="input-field input-group col s4">
+											<input id="l5_length" type="number" class="validate">
+											<label for="l5_length">Comprimento L5:</label>
+											<span class="suffix">m</span>
+										</div>
 									</div>
-									<div class="col s4">
-										<b>Vd:</b>
-										<span>1,14</span>
-										<span>MN</span>
-									</div>
-								</div>
-							</form>
+								</form>
+							</div>
 						</div>
-
-						<hr>
-						<b>Deslocamentos</b>
-						<br />
-
-						<div class="row center-align">
-							<form class="col s12">
-								<div class="row">
-									<div class="col s4">
-										<b>δc:</b>
-										<span>1,14</span>
-										<span>m</span>
+	
+						<div id="wires_tab">
+							<i id="wire-choose-1" class="material-icons right pointer">content_paste</i>
+							<b>Primeiro Arame</b>
+							<br />
+	
+							<div class="row">
+								<form class="col s12 set-image">
+									<div id="properties-wire1-form" class="row">
+										<div class="input-field input-group col s6">
+											<input id="elasticity-e1" type="number" class="validate">
+											<label for="elasticity-e1">Módulo de Elasticidade E1:</label>
+											<span class="suffix">GPa</span>
+										</div>
+										<div class="input-field input-group col s6">
+											<input id="leakage1" type="number" class="validate">
+											<label for="leakage1">Limite de Escoamento σ:</label>
+											<span class="suffix">MPa</span>
+										</div>
 									</div>
-									<div class="col s4">
-										<b>δe:</b>
-										<span>1,14</span>
-										<span>m</span>
+								</form>
+							</div>
+	
+							<div class="row">
+								<form class="col s12">
+									<div id="size-wire1-form" class="row">
+										<div class="input-field input-group col s6">
+											<input id="section_a1" type="number" class="validate">
+											<label for="section_a1">Área da Seção Transversal A1:</label>
+											<span class="suffix">mm²</span>
+										</div>
+										<div class="input-field input-group col s6">
+											<input id="length_l1" type="number" class="validate">
+											<label for="length_l1">Comprimento L1:</label>
+											<span class="suffix">m</span>
+										</div>
 									</div>
-									<div class="col s4">
-										<b>δf:</b>
-										<span>1,14</span>
-										<span>m</span>
+								</form>
+							</div>
+	
+							<i id="wire-choose-2" class="material-icons right pointer">content_paste</i>
+							<b>Segundo Arame</b>
+							<br />
+	
+							<div class="row">
+								<form class="col s12">
+									<div id="properties-wire2-form" class="row">
+										<div class="input-field input-group col s6">
+											<input id="elasticity-e2" type="number" class="validate">
+											<label for="elasticity-e2">Módulo de Elasticidade E2:</label>
+											<span class="suffix">GPa</span>
+										</div>
+										<div class="input-field input-group col s6">
+											<input id="leakage2" type="number" class="validate">
+											<label for="leakage2">Limite de Escoamento σ:</label>
+											<span class="suffix">MPa</span>
+										</div>
 									</div>
-								</div>
-							</form>
-						</div>
-
-						<hr>
-						<b>Deformações</b>
-						<br />
-
-						<div class="row center-align">
-							<form class="col s12">
-								<div class="row">
-									<div class="col s6">
-										<b>ε1:</b>
-										<span>1,14</span>
-										<span>m</span>
+								</form>
+							</div>
+							<div class="row">
+								<form class="col s12">
+									<div id="size-wire1-form" class="row no-bottom">
+										<div class="input-field input-group col s6">
+											<input id="section_a2" type="number" class="validate">
+											<label for="section_a2">Área da Seção Transversal A2:</label>
+											<span class="suffix">mm²</span>
+										</div>
+										<div class="input-field input-group col s6">
+											<input id="length_l2" type="number" class="validate">
+											<label for="length_l2">Comprimento L2:</label>
+											<span class="suffix">m</span>
+										</div>
 									</div>
-									<div class="col s6">
-										<b>ε2:</b>
-										<span>1,14</span>
-										<span>m</span>
-									</div>
-								</div>
-							</form>
+								</form>
+							</div>
+	
 						</div>
 					</div>
-
+	
 					<div class="card-action right-align set-card-action">
-						<button id="download" class="btn waves-effect waves-light purple" type="button" name="action">
-							Baixar
-							<i class="material-icons right">file_download</i>
-						</button>
-						<button id="new-calculator" class="btn waves-effect waves-light" type="button" name="action">
-							Novo Cálculo
+						<button id="calculator" class="btn waves-effect waves-light" type="button" name="action">
+							Calcule
 							<i class="material-icons right">send</i>
 						</button>
 					</div>
@@ -320,7 +179,163 @@
 			</div>
 			<div class="col s2"></div>
 		</div>
-	</div>
+	
+	
+		<div class="fixed-action-btn">
+			<img id="estrutura" class="btn-floating btn-large float-image" src="images/estrutura.png" />
+		</div>
+	
+		<div id="modal-estrutura" class="modal">
+			<div class="modal-content background-white">
+				<img class="materialboxed fit-center" width="800" src="images/estrutura.png">
+			</div>
+		</div>
+	
+		<div id="modal-materials" class="modal">
+			<div class="modal-content">
+				<h4>Selecione o Material Desejado</h4>
+				<hr>
+				<table class="highlight">
+					<thead>
+						<tr>
+							<th>Material</th>
+							<th>Módulo de Elasticidade</th>
+							<th>Tensão de Escoamento</th>
+						</tr>
+					</thead>
+	
+					<tbody id="materials-table">
+						<tr>
+							<td>Aço Estrutural A36</td>
+							<td>200</td>
+							<td>250</td>
+						</tr>
+						<tr>
+							<td>Aço Inoxidável 304</td>
+							<td>193</td>
+							<td>207</td>
+						</tr>
+						<tr>
+							<td>Aço Ferramentas L2</td>
+							<td>200</td>
+							<td>703</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	
+		<br><br><br>
+	
+		<div id="results" class="container" hidden>
+			<div class="row no-bottom">
+				<div class="col s2"></div>
+				<div class="col s8">
+					<div class="card">
+						<div class="card-content">
+							<span class="card-title">Resultados do Cálculo Estrutural</span>
+	
+							<b>Forças de Reação</b>
+							<br />
+	
+							<div class="row center-align">
+								<form class="col s12">
+									<div class="row">
+										<div class="col s4">
+											<b>Va:</b>
+											<span>1,14</span>
+											<span>MN</span>
+										</div>
+										<div class="col s4">
+											<b>Vb:</b>
+											<span>1,14</span>
+											<span>KN</span>
+										</div>
+										<div class="col s4">
+											<b>Vd:</b>
+											<span>1,14</span>
+											<span>MN</span>
+										</div>
+									</div>
+								</form>
+							</div>
+	
+							<hr>
+							<b>Deslocamentos</b>
+							<br />
+	
+							<div class="row center-align">
+								<form class="col s12">
+									<div class="row">
+										<div class="col s4">
+											<b>δc:</b>
+											<span>1,14</span>
+											<span>m</span>
+										</div>
+										<div class="col s4">
+											<b>δe:</b>
+											<span>1,14</span>
+											<span>m</span>
+										</div>
+										<div class="col s4">
+											<b>δf:</b>
+											<span>1,14</span>
+											<span>m</span>
+										</div>
+									</div>
+								</form>
+							</div>
+	
+							<hr>
+							<b>Deformações</b>
+							<br />
+	
+							<div class="row center-align">
+								<form class="col s12">
+									<div class="row">
+										<div class="col s6">
+											<b>ε1:</b>
+											<span>1,14</span>
+											<span>m</span>
+										</div>
+										<div class="col s6">
+											<b>ε2:</b>
+											<span>1,14</span>
+											<span>m</span>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+	
+						<div class="card-action right-align set-card-action">
+							<button id="download" class="btn waves-effect waves-light purple" type="button" name="action">
+								Baixar
+								<i class="material-icons right">file_download</i>
+							</button>
+							<button id="new-calculator" class="btn waves-effect waves-light" type="button" name="action">
+								Novo Cálculo
+								<i class="material-icons right">send</i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col s2"></div>
+			</div>
+		</div>
+	</main>
+
+	<footer>
+		<div class="footer-copyright">
+			<div class="container container-center">
+				© 2021, Amanda Miranda
+				<a class="right" href="https://github.com/amanda-miranda/Dimest">
+					<i class="material-icons text-middle">code</i>
+					Github
+				</a>
+			</div>
+		</div>
+	</footer>
 
 	<!-- Jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
