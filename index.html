@@ -21,21 +21,20 @@
 
 <body class="background">
 	<h1 class="center-align color-white">Dimensionador Estrutural</h1>
-	<h6 class="center-align color-white">Entre com os dados necessários para calcular a estrutura.</h6>
-	<br />
+	<h6 class="center-align color-white">Informe os dados necessários para calcular a estrutura.</h6>
 
-	<div class="row">
+	<div class="row no-bottom">
 		<div class="col s2"></div>
 		<div class="col s8">
 			<div class="card">
 				<div class="card-tabs">
 					<ul class="tabs tabs-fixed-width">
-						<li class="tab"><a class="active" href="#load_tab">Informe Carga e Dimensionamento</a></li>
-						<li class="tab"><a href="#wires_tab">Informe Propriedades do Arames</a></li>
+						<li class="tab"><a class="active" href="#load_tab">Carga e Dimensionamento</a></li>
+						<li class="tab"><a href="#wires_tab">Propriedades do Arames</a></li>
 					</ul>
 				</div>
 
-				<div class="card-content">
+				<div class="card-content set-card-action">
 					<div id="load_tab">
 						<b>Cargas Aplicadas</b>
 						<br />
@@ -88,27 +87,34 @@
 						<br />
 
 						<div class="row">
+							<form class="col s12 set-image">
+								<div class="row">
+									<div class="input-field input-group col s6">
+										<input id="elasticity_e1" type="number" class="validate">
+										<label for="elasticity_e1">Módulo de Elasticidade E1:</label>
+										<span class="suffix">GPa</span>
+									</div>
+									<div class="input-field input-group col s6">
+										<input id="leakage1" type="number" class="validate">
+										<label for="leakage1">Limite de Escoamento σ:</label>
+										<span class="suffix">MPa</span>
+									</div>
+								</div>
+							</form>
+						</div>
+
+						<div class="row">
 							<form class="col s12">
 								<div class="row">
-									<div class="input-field input-group col s3">
-										<input id="p_force" type="number" class="validate">
-										<label for="p_force">Força P:</label>
-										<span class="suffix">KN</span>
+									<div class="input-field input-group col s6">
+										<input id="section_a1" type="number" class="validate">
+										<label for="section_a1">Área da Seção Transversal A1:</label>
+										<span class="suffix">mm²</span>
 									</div>
-									<div class="input-field input-group col s3">
-										<input id="w_load" type="number" class="validate">
-										<label for="w_load">Carga Distribuída W:</label>
-										<span class="suffix">KN/m</span>
-									</div>
-									<div class="input-field input-group col s3">
-										<input id="p_force" type="number" class="validate">
-										<label for="p_force">Força P:</label>
-										<span class="suffix">KN</span>
-									</div>
-									<div class="input-field input-group col s3">
-										<input id="w_load" type="number" class="validate">
-										<label for="w_load">Carga Distribuída W:</label>
-										<span class="suffix">KN/m</span>
+									<div class="input-field input-group col s6">
+										<input id="length_l1" type="number" class="validate">
+										<label for="length_l1">Comprimento L1:</label>
+										<span class="suffix">m</span>
 									</div>
 								</div>
 							</form>
@@ -120,33 +126,40 @@
 						<div class="row">
 							<form class="col s12">
 								<div class="row">
-									<div class="input-field input-group col s3">
-										<input id="p_force" type="number" class="validate">
-										<label for="p_force">Força P:</label>
-										<span class="suffix">KN</span>
+									<div class="input-field input-group col s6">
+										<input id="elasticity_e2" type="number" class="validate">
+										<label for="elasticity_e2">Módulo de Elasticidade E2:</label>
+										<span class="suffix">GPa</span>
 									</div>
-									<div class="input-field input-group col s3">
-										<input id="w_load" type="number" class="validate">
-										<label for="w_load">Carga Distribuída W:</label>
-										<span class="suffix">KN/m</span>
-									</div>
-									<div class="input-field input-group col s3">
-										<input id="p_force" type="number" class="validate">
-										<label for="p_force">Força P:</label>
-										<span class="suffix">KN</span>
-									</div>
-									<div class="input-field input-group col s3">
-										<input id="w_load" type="number" class="validate">
-										<label for="w_load">Carga Distribuída W:</label>
-										<span class="suffix">KN/m</span>
+									<div class="input-field input-group col s6">
+										<input id="leakage2" type="number" class="validate">
+										<label for="leakage2">Limite de Escoamento σ:</label>
+										<span class="suffix">MPa</span>
 									</div>
 								</div>
 							</form>
 						</div>
+						<div class="row">
+							<form class="col s12">
+								<div class="row no-bottom">
+									<div class="input-field input-group col s6">
+										<input id="section_a2" type="number" class="validate">
+										<label for="section_a2">Área da Seção Transversal A2:</label>
+										<span class="suffix">mm²</span>
+									</div>
+									<div class="input-field input-group col s6">
+										<input id="length_l2" type="number" class="validate">
+										<label for="length_l2">Comprimento L2:</label>
+										<span class="suffix">m</span>
+									</div>
+								</div>
+							</form>
+						</div>
+
 					</div>
 				</div>
 
-				<div class="card-action right-align">
+				<div class="card-action right-align set-card-action">
 					<button class="btn waves-effect waves-light" type="submit" name="action">
 						Calcule
 						<i class="material-icons right">send</i>
@@ -164,7 +177,7 @@
 
 	<div id="modal_estrutura" class="modal">
 		<div class="modal-content">
-			<img class="materialboxed" width="650" src="images/estrutura.png">
+			<img class="materialboxed" width="800" src="images/estrutura.png">
 		</div>
 	</div>
 

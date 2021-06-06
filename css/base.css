@@ -7,6 +7,26 @@
     font-family: "Baloo Tammudu 2", cursive;
 }
 
+h1 {
+    margin-bottom: 0;
+}
+
+h6 {
+    margin: 0;
+}
+
+b {
+    line-height: 2.2;
+}
+
+.row {
+    margin-bottom: 14px;
+}
+
+.no-bottom {
+    margin-bottom: 0;
+}
+
 .float-image {
     border-radius: 10px !important;
     width: 100px !important;
@@ -23,6 +43,7 @@
 
 .input-group {
     display: table;
+    margin: 0%;
 }
 
 .input-group input, .suffix {
@@ -31,4 +52,13 @@
 
 .suffix {
     width:1%;
+}
+
+.set-image {
+    width: fit-content;
+}
+
+.set-card-action {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
 }
