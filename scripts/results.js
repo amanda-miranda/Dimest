@@ -3,6 +3,8 @@ $('#new-calculator').click(() => {
     $('#results').fadeOut(1000);
 });
 
+$('#download').click(() => $('#results').printThis());
+
 function doShowResults(inputs) {
     // Calcula Dimensionamento
     // Adiciona os Resultados no HTML
