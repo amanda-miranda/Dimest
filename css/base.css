@@ -1,0 +1,28 @@
+.background {
+    background-image: url(../images/banner.png);
+    background-repeat: no-repeat;
+    background-color: whitesmoke;
+    background-size: cover;
+
+    font-family: "Baloo Tammudu 2", cursive;
+}
+
+.color-white {
+	color: whitesmoke;
+}
+
+.card, .tabs, .card-action {
+	border-radius: 20px !important;
+}
+
+.input-group {
+    display: table;
+}
+
+.input-group input, .suffix {
+    display: table-cell;
+}
+
+.suffix {
+    width:1%;
+}
