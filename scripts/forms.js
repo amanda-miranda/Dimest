@@ -4,6 +4,8 @@ $(document).ready(() => {
 });
 
 $('#calculator').click(() => {
+    $('input').each((index, field) => $(field).focus());
+
     let validFormLoad = isValidLoadAndDimensioningForm();
     let validWire = isValidWiresProperties();
 
@@ -75,5 +77,18 @@ $('#w-load').blur((field) => {
     } else if(wLoad.val() < 0) {
         wLoadMessage.attr('data-error', 'Carga Distribuída w Não Pode Ser Negativa')
         wLoad.addClass('invalid');
+    }   
+})
+
+$('#l3-length').blur((field) => {
+    let l3Length = $(field.target);
+    let l3LengthMessage = $('#l3-length-message');
+
+    if (l3Length.val() == '') {
+        l3LengthMessage.attr('data-error', 'Campo Obrigatório')
+        l3Length.addClass('invalid');
+    } else if(l3Length.val() < 0) {
+        l3LengthMessage.attr('data-error', 'Comprimento L3 Não Pode Ser Negativo')
+        l3Length.addClass('invalid');
     }   
 })
