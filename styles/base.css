@@ -2,7 +2,7 @@
     background-image: url(../images/banner.png);
     background-repeat: no-repeat;
     background-color: whitesmoke;
-    background-size: cover;
+    background-size: 100%;
 
     font-family: "Baloo Tammudu 2", cursive;
 }

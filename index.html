@@ -44,13 +44,15 @@
 								<div class="row">
 									<div class="input-field input-group col s6">
 										<input id="p-force" type="number" class="validate">
-										<span id="p-force-message" class="helper-text" data-error="Inválido" data-success="Válido"></span>
+										<span id="p-force-message" class="helper-text" data-error="Inválido"
+											data-success="Válido"></span>
 										<label for="p-force">Força P:</label>
 										<b class="suffix">KN</b>
 									</div>
 									<div class="input-field input-group col s6">
 										<input id="w-load" type="number" class="validate">
-										<span id="w-load-message" class="helper-text" data-error="Inválido" data-success="Válido"></span>
+										<span id="w-load-message" class="helper-text" data-error="Inválido"
+											data-success="Válido"></span>
 										<label for="w-load">Carga Distribuída W:</label>
 										<b class="suffix">KN/m</b>
 									</div>
@@ -90,7 +92,7 @@
 
 						<div class="row">
 							<form class="col s12 set-image">
-								<div id= "properties-wire1-form" class="row">
+								<div id="properties-wire1-form" class="row">
 									<div class="input-field input-group col s6">
 										<input id="elasticity_e1" type="number" class="validate">
 										<label for="elasticity_e1">Módulo de Elasticidade E1:</label>
@@ -107,7 +109,7 @@
 
 						<div class="row">
 							<form class="col s12">
-								<div id= "size-wire1-form" class="row">
+								<div id="size-wire1-form" class="row">
 									<div class="input-field input-group col s6">
 										<input id="section_a1" type="number" class="validate">
 										<label for="section_a1">Área da Seção Transversal A1:</label>
@@ -127,7 +129,7 @@
 
 						<div class="row">
 							<form class="col s12">
-								<div id= "properties-wire2-form" class="row">
+								<div id="properties-wire2-form" class="row">
 									<div class="input-field input-group col s6">
 										<input id="elasticity_e2" type="number" class="validate">
 										<label for="elasticity_e2">Módulo de Elasticidade E2:</label>
@@ -143,7 +145,7 @@
 						</div>
 						<div class="row">
 							<form class="col s12">
-								<div id= "size-wire1-form" class="row no-bottom">
+								<div id="size-wire1-form" class="row no-bottom">
 									<div class="input-field input-group col s6">
 										<input id="section_a2" type="number" class="validate">
 										<label for="section_a2">Área da Seção Transversal A2:</label>
@@ -183,6 +185,102 @@
 		</div>
 	</div>
 
+
+	<br><br><br>
+
+	<div id="results" class="container" hidden>
+		<div class="row no-bottom">
+			<div class="col s2"></div>
+			<div class="col s8">
+				<div class="card">
+					<div class="card-content">
+						<span class="card-title">Resultados do Cálculo Estrutural</span>
+						
+						<b>Forças de Reação</b>
+						<br />
+
+						<div class="row center-align">
+							<form class="col s12">
+								<div class="row">
+									<div class="col s4">
+										<b>Va:</b>
+										<span>1,14</span>
+										<span>MN</span>
+									</div>
+									<div class="col s4">
+										<b>Vb:</b>
+										<span>1,14</span>
+										<span>KN</span>
+									</div>
+									<div class="col s4">
+										<b>Vd:</b>
+										<span>1,14</span>
+										<span>MN</span>
+									</div>
+								</div>
+							</form>
+						</div>
+
+						<hr>
+						<b>Deslocamentos</b>
+						<br />
+
+						<div class="row center-align">
+							<form class="col s12">
+								<div class="row">
+									<div class="col s4">
+										<b>δc:</b>
+										<span>1,14</span>
+										<span>m</span>
+									</div>
+									<div class="col s4">
+										<b>δe:</b>
+										<span>1,14</span>
+										<span>m</span>
+									</div>
+									<div class="col s4">
+										<b>δf:</b>
+										<span>1,14</span>
+										<span>m</span>
+									</div>
+								</div>
+							</form>
+						</div>
+
+						<hr>
+						<b>Deformações</b>
+						<br />
+
+						<div class="row center-align">
+							<form class="col s12">
+								<div class="row">
+									<div class="col s6">
+										<b>ε1:</b>
+										<span>1,14</span>
+										<span>m</span>
+									</div>
+									<div class="col s6">
+										<b>ε2:</b>
+										<span>1,14</span>
+										<span>m</span>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+					<div class="card-action right-align set-card-action">
+						<button id="new-calculator" class="btn waves-effect waves-light" type="button" name="action">
+							Novo Cálculo
+							<i class="material-icons right">send</i>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col s2"></div>
+		</div>
+	</div>
+
 	<!-- Jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -190,6 +288,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 	<script src="scripts/attachment.js"></script>
+	<script src="scripts/results.js"></script>
 	<script src="scripts/forms.js"></script>
 	<script src="scripts/home.js"></script>
 </body>

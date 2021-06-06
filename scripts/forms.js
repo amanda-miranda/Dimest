@@ -12,8 +12,12 @@ $('#calculator').click(() => {
         return;
     }
 
-    console.log('Realizando Cálculo!')
-    // Calculo do Dimensionamento
+    let inputs = {
+        pForce: $('#p-force').val(),
+        wLoad: $('#w-load').val()
+    }
+
+    doShowResults(inputs);
 })
 
 function isValidLoadAndDimensioningForm() {
