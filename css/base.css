@@ -7,6 +7,12 @@
     font-family: "Baloo Tammudu 2", cursive;
 }
 
+.float-image {
+    border-radius: 10px !important;
+    width: 100px !important;
+    height: 60px !important;
+}
+
 .color-white {
 	color: whitesmoke;
 }

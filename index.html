@@ -157,6 +157,17 @@
 		<div class="col s2"></div>
 	</div>
 
+
+	<div class="fixed-action-btn">
+		<img id="estrutura" class="btn-floating btn-large float-image" src="images/estrutura.png" />
+	</div>
+
+	<div id="modal_estrutura" class="modal">
+		<div class="modal-content">
+			<img class="materialboxed" width="650" src="images/estrutura.png">
+		</div>
+	</div>
+
 	<!-- Jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -167,6 +178,20 @@
 		$(document).ready(function () {
 			$('.tabs').tabs();
 		});
+
+		$(document).ready(function () {
+			$('.fixed-action-btn').floatingActionButton();
+		});
+
+		$(document).ready(function () {
+			$('.materialboxed').materialbox();
+		});
+
+		$(document).ready(function () {
+			$('.modal').modal();
+			$("#estrutura").mouseenter(() => $('#modal_estrutura').modal("open"));
+		});
+
 	</script>
 
 </body>
