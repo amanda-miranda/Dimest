@@ -1,6 +1,6 @@
 $('#new-calculator').click(() => {
-    scrollTo("html", 2000);
-    $('#results').fadeOut(2000);
+    scrollTo("html", 1000);
+    $('#results').fadeOut(1000);
 });
 
 function doShowResults(inputs) {
@@ -8,8 +8,8 @@ function doShowResults(inputs) {
     // Adiciona os Resultados no HTML
     calculate(inputs);
 
-    $('#results').fadeIn(2000);
-    scrollTo("#results", 2000);
+    $('#results').fadeIn(1000);
+    scrollTo("#results", 1000);
 }
 
 function calculate(inputs) {

@@ -40,6 +40,16 @@ function isValidWiresProperties() {
     
 }
 
+function setWiresFields(elasticity, leakage, position) {
+    if(position == 'first') {
+        $('#elasticity-e1').val(elasticity).focus();
+        $('#leakage1').val(leakage).focus();
+    } else {
+        $('#elasticity-e2').val(elasticity).focus();
+        $('#leakage2').val(leakage).focus();
+    }
+}
+
 /* Validações de Campos */
 
 $('#p-force').blur((field) => {

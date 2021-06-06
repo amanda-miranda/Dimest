@@ -19,6 +19,10 @@ b {
     line-height: 2.2;
 }
 
+tr {
+    cursor: pointer;
+}
+
 .row {
     margin-bottom: 14px;
 }
@@ -74,4 +78,8 @@ b {
 .fit-center {
     width: fit-content;
     margin: auto;
+}
+
+.pointer {
+    cursor: pointer;
 }

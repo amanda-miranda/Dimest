@@ -87,6 +87,7 @@
 					</div>
 
 					<div id="wires_tab">
+						<i id="wire-choose-1" class="material-icons right pointer">content_paste</i>
 						<b>Primeiro Arame</b>
 						<br />
 
@@ -94,8 +95,8 @@
 							<form class="col s12 set-image">
 								<div id="properties-wire1-form" class="row">
 									<div class="input-field input-group col s6">
-										<input id="elasticity_e1" type="number" class="validate">
-										<label for="elasticity_e1">Módulo de Elasticidade E1:</label>
+										<input id="elasticity-e1" type="number" class="validate">
+										<label for="elasticity-e1">Módulo de Elasticidade E1:</label>
 										<span class="suffix">GPa</span>
 									</div>
 									<div class="input-field input-group col s6">
@@ -124,6 +125,7 @@
 							</form>
 						</div>
 
+						<i id="wire-choose-2" class="material-icons right pointer">content_paste</i>
 						<b>Segundo Arame</b>
 						<br />
 
@@ -131,8 +133,8 @@
 							<form class="col s12">
 								<div id="properties-wire2-form" class="row">
 									<div class="input-field input-group col s6">
-										<input id="elasticity_e2" type="number" class="validate">
-										<label for="elasticity_e2">Módulo de Elasticidade E2:</label>
+										<input id="elasticity-e2" type="number" class="validate">
+										<label for="elasticity-e2">Módulo de Elasticidade E2:</label>
 										<span class="suffix">GPa</span>
 									</div>
 									<div class="input-field input-group col s6">
@@ -179,12 +181,45 @@
 		<img id="estrutura" class="btn-floating btn-large float-image" src="images/estrutura.png" />
 	</div>
 
-	<div id="modal_estrutura" class="modal">
+	<div id="modal-estrutura" class="modal">
 		<div class="modal-content background-white">
 			<img class="materialboxed fit-center" width="800" src="images/estrutura.png">
 		</div>
 	</div>
 
+	<div id="modal-materials" class="modal">
+		<div class="modal-content">
+			<h4>Selecione o Material Desejado</h4>
+			<hr>
+			<table class="highlight">
+				<thead>
+					<tr>
+						<th>Material</th>
+						<th>Módulo de Elasticidade</th>
+						<th>Tensão de Escoamento</th>
+					</tr>
+				</thead>
+
+				<tbody id="materials-table">
+					<tr>
+						<td>Aço Estrutural A36</td>
+						<td>200</td>
+						<td>250</td>
+					</tr>
+					<tr>
+						<td>Aço Inoxidável 304</td>
+						<td>193</td>
+						<td>207</td>
+					</tr>
+					<tr>
+						<td>Aço Ferramentas L2</td>
+						<td>200</td>
+						<td>703</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 
 	<br><br><br>
 
@@ -195,7 +230,7 @@
 				<div class="card">
 					<div class="card-content">
 						<span class="card-title">Resultados do Cálculo Estrutural</span>
-						
+
 						<b>Forças de Reação</b>
 						<br />
 
@@ -288,6 +323,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 	<script src="scripts/attachment.js"></script>
+	<script src="scripts/materials.js"></script>
 	<script src="scripts/results.js"></script>
 	<script src="scripts/forms.js"></script>
 	<script src="scripts/home.js"></script>
