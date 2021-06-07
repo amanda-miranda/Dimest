@@ -45,14 +45,14 @@
 								<form id="load-form" class="col s12">
 									<div class="row">
 										<div class="input-field input-group col s6">
-											<input id="p-force" type="number" class="validate">
+											<input id="p-force" type="number" step="0.0001" class="validate">
 											<span id="p-force-message" class="helper-text" data-error="Inválido"
 												data-success="Válido"></span>
 											<label for="p-force">Força P:</label>
 											<b class="suffix">KN</b>
 										</div>
 										<div class="input-field input-group col s6">
-											<input id="w-load" type="number" class="validate">
+											<input id="w-load" type="number" step="0.0001" class="validate">
 											<span id="w-load-message" class="helper-text" data-error="Inválido"
 												data-success="Válido"></span>
 											<label for="w-load">Carga Distribuída W:</label>
@@ -69,20 +69,24 @@
 								<form class="col s12">
 									<div id="dimensioning-form" class="row">
 										<div class="input-field input-group col s4">
-											<input id="l3-length" type="number" class="validate">
+											<input id="l3-length" type="number" step="0.0001" class="validate">
 											<span id="l3-length-message" class="helper-text" data-error="Inválido"
 												data-success="Válido"></span>
 											<label for="l3-length">Comprimento L3:</label>
 											<span class="suffix">m</span>
 										</div>
 										<div class="input-field input-group col s4">
-											<input id="l4_length" type="number" class="validate">
-											<label for="l4_length">Comprimento L4:</label>
+											<input id="l4-length" type="number" step="0.0001" class="validate">
+											<span id="l4-length-message" class="helper-text" data-error="Inválido"
+												data-success="Válido"></span>
+											<label for="l4-length">Comprimento L4:</label>
 											<span class="suffix">m</span>
 										</div>
 										<div class="input-field input-group col s4">
-											<input id="l5_length" type="number" class="validate">
-											<label for="l5_length">Comprimento L5:</label>
+											<input id="l5-length" type="number" step="0.0001" class="validate">
+											<span id="l5-length-message" class="helper-text" data-error="Inválido"
+												data-success="Válido"></span>
+											<label for="l5-length">Comprimento L5:</label>
 											<span class="suffix">m</span>
 										</div>
 									</div>
@@ -99,12 +103,16 @@
 								<form class="col s12 set-image">
 									<div id="properties-wire1-form" class="row">
 										<div class="input-field input-group col s6">
-											<input id="elasticity-e1" type="number" class="validate">
+											<input id="elasticity-e1" type="number" step="0.0001" class="validate">
+											<span id="elasticity-e1-message" class="helper-text" data-error="Inválido"
+												data-success="Válido"></span>
 											<label for="elasticity-e1">Módulo de Elasticidade E1:</label>
 											<span class="suffix">GPa</span>
 										</div>
 										<div class="input-field input-group col s6">
-											<input id="leakage1" type="number" class="validate">
+											<input id="leakage1" type="number" step="0.0001" class="validate">
+											<span id="leakage1-message" class="helper-text" data-error="Inválido"
+												data-success="Válido"></span>
 											<label for="leakage1">Limite de Escoamento σ:</label>
 											<span class="suffix">MPa</span>
 										</div>
@@ -116,13 +124,17 @@
 								<form class="col s12">
 									<div id="size-wire1-form" class="row">
 										<div class="input-field input-group col s6">
-											<input id="section_a1" type="number" class="validate">
-											<label for="section_a1">Área da Seção Transversal A1:</label>
+											<input id="section-a1" type="number" step="0.0001" class="validate">
+											<span id="section-a1-message" class="helper-text" data-error="Inválido"
+												data-success="Válido"></span>
+											<label for="section-a1">Área da Seção Transversal A1:</label>
 											<span class="suffix">mm²</span>
 										</div>
 										<div class="input-field input-group col s6">
-											<input id="length_l1" type="number" class="validate">
-											<label for="length_l1">Comprimento L1:</label>
+											<input id="length-l1" type="number" step="0.0001" class="validate">
+											<span id="length-l1-message" class="helper-text" data-error="Inválido"
+												data-success="Válido"></span>
+											<label for="length-l1">Comprimento L1:</label>
 											<span class="suffix">m</span>
 										</div>
 									</div>
@@ -138,12 +150,16 @@
 								<form class="col s12">
 									<div id="properties-wire2-form" class="row">
 										<div class="input-field input-group col s6">
-											<input id="elasticity-e2" type="number" class="validate">
+											<input id="elasticity-e2" type="number" step="0.0001" class="validate">
+											<span id="elasticity-e2-message" class="helper-text" data-error="Inválido"
+												data-success="Válido"></span>
 											<label for="elasticity-e2">Módulo de Elasticidade E2:</label>
 											<span class="suffix">GPa</span>
 										</div>
 										<div class="input-field input-group col s6">
-											<input id="leakage2" type="number" class="validate">
+											<input id="leakage2" type="number" step="0.0001" class="validate">
+											<span id="leakage2-message" class="helper-text" data-error="Inválido"
+												data-success="Válido"></span>
 											<label for="leakage2">Limite de Escoamento σ:</label>
 											<span class="suffix">MPa</span>
 										</div>
@@ -154,13 +170,17 @@
 								<form class="col s12">
 									<div id="size-wire1-form" class="row no-bottom">
 										<div class="input-field input-group col s6">
-											<input id="section_a2" type="number" class="validate">
-											<label for="section_a2">Área da Seção Transversal A2:</label>
+											<input id="section-a2" type="number" step="0.0001" class="validate">
+											<span id="section-a2-message" class="helper-text" data-error="Inválido"
+												data-success="Válido"></span>
+											<label for="section-a2">Área da Seção Transversal A2:</label>
 											<span class="suffix">mm²</span>
 										</div>
 										<div class="input-field input-group col s6">
-											<input id="length_l2" type="number" class="validate">
-											<label for="length_l2">Comprimento L2:</label>
+											<input id="length-l2" type="number" step="0.0001" class="validate">
+											<span id="length-l2-message" class="helper-text" data-error="Inválido"
+												data-success="Válido"></span>
+											<label for="length-l2">Comprimento L2:</label>
 											<span class="suffix">m</span>
 										</div>
 									</div>
