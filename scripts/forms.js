@@ -4,13 +4,39 @@ $(document).ready(() => {
 });
 
 $('#calculator').click(() => {
-    $('input').each((index, field) => $(field).focus());
+    $('input').each((index, field) => $(field).blur()); //AQUI
 
     let validFormLoad = isValidLoadAndDimensioningForm();
     let validWire = isValidWiresProperties();
+    let leakageLimit1 = $('#leakage1').val();
+    let leakageLimit2 = $('#leakage2').val();
 
-    if(!validFormLoad || !validWire) {
+
+    if(!validFormLoad) {
         M.toast({html: 'Verifique os Campos Inválidos'});
+        $('.tabs').tabs('select', 'load_tab')
+        return;
+    }
+
+    if(!validWire) {
+        M.toast({html: 'Verifique os Campos Inválidos'});
+        $('.tabs').tabs('select', 'wires_tab')
+        return;
+    }
+
+    else if(leakageLimit1 < 200 && leakageLimit2 < 200){
+        M.toast({html: 'Limite de escoamento dos arames ultrapassam o de aço!'});
+        $('.tabs').tabs('select', 'wires_tab')
+        return;
+    }
+    else if(leakageLimit1 < 200){
+        M.toast({html: 'Limite de escoamento do primeiro arame ultrapassa o de aço!'});
+        $('.tabs').tabs('select', 'wires_tab')
+        return;
+    }
+    else if(leakageLimit2 < 200){
+        M.toast({html: 'Limite de escoamento do segundo arame ultrapassa o de aço!'});
+        $('.tabs').tabs('select', 'wires_tab')
         return;
     }
 
