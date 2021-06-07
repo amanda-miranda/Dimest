@@ -91,8 +91,8 @@
 						</div>
 	
 						<div id="wires_tab">
-							<i id="wire-choose-1" class="material-icons right pointer">content_paste</i>
 							<b>Primeiro Arame</b>
+							<i id="wire-choose-1" class="material-icons text-middle pointer">content_paste</i>
 							<br />
 	
 							<div class="row">
@@ -129,8 +129,9 @@
 								</form>
 							</div>
 	
-							<i id="wire-choose-2" class="material-icons right pointer">content_paste</i>
+							
 							<b>Segundo Arame</b>
+							<i id="wire-choose-2" class="material-icons text-middle pointer">content_paste</i>
 							<br />
 	
 							<div class="row">
@@ -199,8 +200,8 @@
 					<thead>
 						<tr>
 							<th>Material</th>
-							<th>Módulo de Elasticidade</th>
-							<th>Tensão de Escoamento</th>
+							<th>Módulo de Elasticidade (GPa)</th>
+							<th>Tensão de Escoamento (MPa)</th>
 						</tr>
 					</thead>
 	
@@ -211,14 +212,44 @@
 							<td>250</td>
 						</tr>
 						<tr>
+							<td>Aço Ferramentas L2</td>
+							<td>200</td>
+							<td>703</td>
+						</tr>
+						<tr>
 							<td>Aço Inoxidável 304</td>
 							<td>193</td>
 							<td>207</td>
 						</tr>
 						<tr>
-							<td>Aço Ferramentas L2</td>
-							<td>200</td>
-							<td>703</td>
+							<td>Alumínio 2014</td>
+							<td>73.1</td>
+							<td>414</td>
+						</tr>
+						<tr>
+							<td>Alumínio 6061</td>
+							<td>68.9</td>
+							<td>255</td>
+						</tr>
+						<tr>
+							<td>Bronze C86100</td>
+							<td>103</td>
+							<td>345</td>
+						</tr>
+						<tr>
+							<td>Latão Vermelho C83400</td>
+							<td>101</td>
+							<td>70</td>
+						</tr>
+						<tr>
+							<td>Magnésio Am 1004 - T61</td>
+							<td>44.7</td>
+							<td>152</td>
+						</tr>
+						<tr>
+							<td>Titânio Ti -6A1 - 4V</td>
+							<td>120</td>
+							<td>924</td>
 						</tr>
 					</tbody>
 				</table>
@@ -243,7 +274,7 @@
 									<div class="row">
 										<div class="col s4">
 											<b>Va:</b>
-											<span>1,14</span>
+											<span id="reaction-va">1,14</span>
 											<span>MN</span>
 										</div>
 										<div class="col s4">
@@ -328,7 +359,7 @@
 	<footer>
 		<div class="footer-copyright">
 			<div class="container container-center">
-				© 2021, Amanda Miranda
+				© 2021  Amanda Miranda, Ian Marcos e Thallis André
 				<a class="right" href="https://github.com/amanda-miranda/Dimest">
 					<i class="material-icons text-middle">code</i>
 					Github

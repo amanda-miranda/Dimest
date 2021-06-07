@@ -16,4 +16,8 @@ function doShowResults(inputs) {
 
 function calculate(inputs) {
     console.log(inputs.pForce);
+
+    let resultLambda1 = inputs.pForce * 2;
+
+    $('#reaction-va').text(resultLambda1)
 }
