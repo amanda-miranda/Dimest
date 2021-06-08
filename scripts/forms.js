@@ -8,9 +8,10 @@ $('#calculator').click(() => {
 
     let validFormLoad = isValidLoadAndDimensioningForm();
     let validWire = isValidWiresProperties();
-    let leakageLimit1 = $('#leakage1').val();
-    let leakageLimit2 = $('#leakage2').val();
 
+
+    let teste = localStorage.getItem('elasticidade1');
+    console.log(teste);
 
     if(!validFormLoad) {
         M.toast({html: 'Verifique os Campos Inválidos'});
@@ -24,21 +25,7 @@ $('#calculator').click(() => {
         return;
     }
 
-    else if(leakageLimit1 > 200 && leakageLimit2 > 200){
-        M.toast({html: 'Limite de escoamento dos arames ultrapassam o de aço!'});
-        $('.tabs').tabs('select', 'wires_tab')
-        return;
-    }
-    else if(leakageLimit1 > 200){
-        M.toast({html: 'Limite de escoamento do primeiro arame ultrapassa o de aço!'});
-        $('.tabs').tabs('select', 'wires_tab')
-        return;
-    }
-    else if(leakageLimit2 > 200){
-        M.toast({html: 'Limite de escoamento do segundo arame ultrapassa o de aço!'});
-        $('.tabs').tabs('select', 'wires_tab')
-        return;
-    }
+
 
     let inputs = {
         p: $('#p-force').val(),
@@ -56,7 +43,7 @@ $('#calculator').click(() => {
         t2: $('#leakage2').val()
     }
 
-    doShowResults(inputs);
+    calculate(inputs);
 })
 
 function isValidLoadAndDimensioningForm() {

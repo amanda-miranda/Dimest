@@ -5,18 +5,21 @@ $('#new-calculator').click(() => {
 
 $('#download').click(() => $('#results').printThis());
 
-function doShowResults(inputs) {
+/*function doShowResults(inputs) {
     // Calcula Dimensionamento
 
+    calculate(inputs);
 
     // Adiciona os Resultados no HTML
-    calculate(inputs);
 
     $('#results').fadeIn(1000);
     scrollTo("#results", 1000);
-}
+}*/
 
 function calculate(inputs) {
+
+    let leakageLimit1 = $('#leakage1').val();
+    let leakageLimit2 = $('#leakage2').val();
 
     let p = parseInt(inputs.p);
     let w = parseInt(inputs.w);
@@ -32,7 +35,7 @@ function calculate(inputs) {
     let t1 = parseInt(inputs.t1);
     let t2 = parseInt(inputs.t2);
 
- 
+  
     let vd = ((w*((l3*l3)/2))+(w*(l4+l5)*(l4+l5))+(p*(l3+l4)))/(((a1*e1*l2*l3*l3)/(a2*e2*l1*(l3+l4)))+l3+l4);
     let vb = (vd*a1*e1*l2*l3)/(a2*e2*l1*(l3+l4));
     let va = p+(w*l3)+(2*w*(l4+l5))-vb-vd;
@@ -42,6 +45,29 @@ function calculate(inputs) {
     let ebc = tc/l1;
     let ede = te/l2;
 
+    let limite1 = e1*ebc;
+    let limite2 = e2*ede;
+
+    if(limite1 < leakageLimit1 && limite2 < leakageLimit2){
+        M.toast({html: 'Limite de escoamento dos arames ultrapassam o de aço!'});
+        $('.tabs').tabs('select', 'wires_tab')
+        return;
+    }
+    else if(limite1 < leakageLimit1){
+        M.toast({html: 'Limite de escoamento do primeiro arame ultrapassa o de aço!'});
+        $('.tabs').tabs('select', 'wires_tab')
+        return;
+    }
+    else if(limite2 < leakageLimit2){
+        M.toast({html: 'Limite de escoamento do segundo arame ultrapassa o de aço!'});
+        $('.tabs').tabs('select', 'wires_tab')
+        return;
+    }
+
+    //localStorage.setItem('elasticidade1',e1);
+
+
+
     $('#reaction-va').html(va.toFixed(2));
     $('#reaction-vb').html(vb.toFixed(2));
     $('#reaction-vd').html(vd.toFixed(2));
@@ -50,5 +76,8 @@ function calculate(inputs) {
     $('#displacement-tf').html(tf.toFixed(2));
     $('#deformation-ebc').html(ebc.toFixed(2));
     $('#deformation-ede').html(ede.toFixed(2));
+
+    $('#results').fadeIn(1000);
+    scrollTo("#results", 1000);
 
 }
