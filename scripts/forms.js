@@ -24,25 +24,36 @@ $('#calculator').click(() => {
         return;
     }
 
-    else if(leakageLimit1 < 200 && leakageLimit2 < 200){
+    else if(leakageLimit1 > 200 && leakageLimit2 > 200){
         M.toast({html: 'Limite de escoamento dos arames ultrapassam o de aço!'});
         $('.tabs').tabs('select', 'wires_tab')
         return;
     }
-    else if(leakageLimit1 < 200){
+    else if(leakageLimit1 > 200){
         M.toast({html: 'Limite de escoamento do primeiro arame ultrapassa o de aço!'});
         $('.tabs').tabs('select', 'wires_tab')
         return;
     }
-    else if(leakageLimit2 < 200){
+    else if(leakageLimit2 > 200){
         M.toast({html: 'Limite de escoamento do segundo arame ultrapassa o de aço!'});
         $('.tabs').tabs('select', 'wires_tab')
         return;
     }
 
     let inputs = {
-        pForce: $('#p-force').val(),
-        wLoad: $('#w-load').val()
+        p: $('#p-force').val(),
+        w: $('#w-load').val(),
+        l1: $('#length-l1').val(),
+        l2: $('#length-l2').val(),
+        l3: $('#l3-length').val(),
+        l4: $('#l4-length').val(),
+        l5: $('#l5-length').val(),
+        e1: $('#elasticity-e1').val(),
+        e2: $('#elasticity-e2').val(),
+        a1: $('#section-a1').val(),
+        a2: $('#section-a2').val(),
+        t1: $('#leakage1').val(),
+        t2: $('#leakage2').val()
     }
 
     doShowResults(inputs);
