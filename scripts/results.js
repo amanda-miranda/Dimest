@@ -49,24 +49,20 @@ function calculate(inputs) {
     let limite2 = e2*ede;
 
     if(limite1 < leakageLimit1 && limite2 < leakageLimit2){
-        M.toast({html: 'Limite de escoamento dos arames ultrapassam o de aço!'});
+        M.toast({html: 'Limite de escoamento dos arames ultrapassam o especificado!'});
         $('.tabs').tabs('select', 'wires_tab')
         return;
     }
     else if(limite1 < leakageLimit1){
-        M.toast({html: 'Limite de escoamento do primeiro arame ultrapassa o de aço!'});
+        M.toast({html: 'Limite de escoamento do primeiro arame ultrapassa o especificado!'});
         $('.tabs').tabs('select', 'wires_tab')
         return;
     }
     else if(limite2 < leakageLimit2){
-        M.toast({html: 'Limite de escoamento do segundo arame ultrapassa o de aço!'});
+        M.toast({html: 'Limite de escoamento do segundo arame ultrapassa o especificado!'});
         $('.tabs').tabs('select', 'wires_tab')
         return;
     }
-
-    //localStorage.setItem('elasticidade1',e1);
-
-
 
     $('#reaction-va').html(va.toFixed(2));
     $('#reaction-vb').html(vb.toFixed(2));
